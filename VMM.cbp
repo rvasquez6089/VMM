@@ -32,7 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="FileFunc.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="program.h" />
+		<Unit filename="vmm.cpp" />
+		<Unit filename="vmm.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
