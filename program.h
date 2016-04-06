@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iostream>
 
-const int PROGARRSZ = 15;
+const int PROGARRSZ = 10;
 
 using namespace std;
 
@@ -15,7 +15,8 @@ class program
   public:
     int programnum;
     int programsize;
-
+    int pages;
+    int pageoffset;
 };
 
 

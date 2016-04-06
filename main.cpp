@@ -10,18 +10,23 @@ using namespace std;
 program prog[PROGARRSZ];
 memory mem;
 
+
 int main(int argc, char* argv[])
 {
-    getproginfo(prog, argv[1]);
+    mem.RAM = new page[(512/atoi(argv[3]))];
+    mem.prog = prog;
+    getproginfo(mem.prog, argv[1]);
     for(int i = 0; i < argc; i++)
     {
       cout<<"argv["<<i<<"] "<<argv[i]<<endl;
     }
-    for(int i = 0; i < 10; i++)
+    mem.set_page_size(atoi(argv[3]));
+    mem.allocate_mem();
+    for(int i = 0; i < PROGARRSZ; i++)
     {
-      cout<<"Prognum: "<<prog[i].programnum<<" Progsize: "<<prog[i].programsize<<endl;
+      cout<<"Prog: "<<mem.prog[i].programnum<<" Progam Size: "<<mem.prog[i].programsize
+            <<" Pages: "<<mem.prog[i].pages<<" Pageoffset: "<<mem.prog[i].pageoffset<<endl;
     }
 
-    mem.set_page_size(atoi(argv[3]));
     return 0;
 }

@@ -6,10 +6,12 @@
 #include <iostream>
 #include <cstring>
 #include "program.h"
+#include "vmm.h"
 
 using namespace std;
 
 void getproginfo(program progs[], char filename[])
+
 {
   char text[100];
   char * temp;
@@ -34,8 +36,7 @@ void getproginfo(program progs[], char filename[])
       }
       temp = strtok(NULL," ");
       //cout<<temp<<endl;
-      {
-    }
+
 
     if(temp)
     {
@@ -49,5 +50,7 @@ void getproginfo(program progs[], char filename[])
   }
   programlist.close();
 }
+
+
 
 #endif // FILEFUNC_H_INCLUDED
